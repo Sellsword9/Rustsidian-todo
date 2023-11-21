@@ -1,7 +1,9 @@
 use std::env;
 use std::fs;
 const PATH: &str = "./head/TODO.md";
-const CHAR_TO_LOOK_AT: &str = "- [x]";
+const CHAR_TO_LOOK_AT: &str = "- [x]"; 
+const CHAR_NOT_DONE: &str = "- [ ]"; // This is a "just in case" commit
+const CHAR_TASK_IDENTIFIER: &str = "- [";
 const HELP: &str = "
 Running with cargo or no arguments will use -n
 Usage: 
@@ -34,7 +36,7 @@ fn count_unchecked() -> usize {
     // Contamos las líneas que no están marcadas como hechas
     let mut count = 0;
     for line in lines {
-        if !line.starts_with(CHAR_TO_LOOK_AT) {
+        if line.starts_with(CHAR_NOT_DONE) || line.starts_with(CHAR_TASK_IDENTIFIER) {
             count += 1;
         }
     }
@@ -43,7 +45,13 @@ fn count_unchecked() -> usize {
 fn count_total() -> usize {
     let content: String = fs::read_to_string(PATH).expect("Error al leer el archivo");
     let lines: Vec<&str> = content.split("\n").collect();
-    lines.len()
+    let mut count = 0;
+    for line in lines {
+        if line.starts_with(CHAR_TASK_IDENTIFIER) {
+            count += 1;
+        }
+    }
+    count
 }
 fn count_done() -> usize {
     let content: String = fs::read_to_string(PATH).expect("Error al leer el archivo");
