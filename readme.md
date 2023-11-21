@@ -26,6 +26,9 @@ cargo build --release
 And you're done! Now you can run the program and it will use the new path.
 
 # Want a faster installation?
+First of all, you should create/move a Obsidian vault to a new folder or a empty one.
+It can work in any folder, of course, but it may be messy.
+However you do it, go to a terminal and run this:
 ```bash
 git clone https://www.github.com/sellsword9/rustsidian-todo && cd rustsidian-todo && cargo build --release && cd src; vim main.rs;
 ```
@@ -33,7 +36,7 @@ Then, change the path. If you don't have vim, you can use nano, or vsc, or nvim.
 ```bash
 cargo build --release
 ```
-And you're done. Now you can run this to get help on usage in your own terminal
+And you're done. Now you can run this to get help on usage in your own terminal. 
 ```bash
 cargo r -- -h
 ```
