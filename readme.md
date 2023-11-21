@@ -2,12 +2,13 @@
 Just a mix of obsidian and Rust for tracking todo-lists in your favorite obsidian vaults.
 ## Requirements
 You need to have Rust installed. If you don't, you can install it from [here](https://www.rust-lang.org/tools/install).
-## Usage
-First of all, let's install the program:
+You also need to have git installed. If you don't, you can install it from [here](https://git-scm.com/downloads).
+## Installation
+You can download the zip file from the releases page. Or, you can clone the repository:
 ```bash
 git clone https://www.github.com/sellsword9/rustsidian-todo
 ```
-Then, we need to build it:
+Then, we need to build it: (Ommit first part if you're already in that folder)
 ```bash
 cd rustsidian-todo && cargo build --release
 ```
