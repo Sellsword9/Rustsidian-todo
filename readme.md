@@ -35,7 +35,7 @@ git clone https://www.github.com/sellsword9/rustsidian-todo && cd rustsidian-tod
 ```
 Then, change the path. If you don't have vim, you can use nano, or vsc, or nvim... After you're done, just run this to build
 ```bash
-cargo build --release
+cd .. && cargo build --release
 ```
 And you're done. Now you can run this to get help on usage in your own terminal. 
 ```bash
